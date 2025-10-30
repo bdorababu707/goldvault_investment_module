@@ -3,7 +3,7 @@ services:
     name: goldvault-api
     env: python
     region: singapore  # or any Render region near you
-    buildCommand: "uv sync"
+    buildCommand: "./build.sh"
     startCommand: "uv run main.py"
     envVars:
       - key: ENVIRONMENT
