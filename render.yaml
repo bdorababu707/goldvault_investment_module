@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: goldvault-api
+    env: python
+    region: singapore  # or any Render region near you
+    buildCommand: "uv sync"
+    startCommand: "uv run main.py"
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: DATABASE_URL
+        sync: false  # you'll set this in Render Dashboard
