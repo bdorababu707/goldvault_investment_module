@@ -1,13 +1,12 @@
 from datetime import datetime
-from typing import Optional
-from icecream import Literal
+from typing import Literal, Optional
 from pydantic import BaseModel, Field, field_validator
 
 class CreateInvestmentPlan(BaseModel):
     plan_name: str
     description: str
-    bonus_percentage: float = Field(..., gt=0, description="Bonus percentage must be greater than 0")
-    relaxation_days: int = Field(..., gt=0, description="Relaxation days must be greater than 0")
+    bonus_percentage: float = Field(..., ge=0, description="Bonus percentage must be greater than or equal to 0")
+    relaxation_days: int = Field(..., ge=0, description="Relaxation days must be greater than or equal 0")
     minimum_investment_amount: int = Field(..., gt=0, description="Minimum investment amount will be greater than 0")
 
 
