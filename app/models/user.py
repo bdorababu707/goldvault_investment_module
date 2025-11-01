@@ -28,6 +28,7 @@ class User(BaseModel):
     full_address: str = ""
     user_type: Literal["ADMIN", "USER"] = "USER"
     status: Literal["ACTIVE", "INACTIVE", "DELETED"] = "ACTIVE"
+    otp: int = 0
     kyc_documents: Optional[UserKycDocuments] = None
     metadata: Optional[dict] = None
     created_at: int = 0
